@@ -10,6 +10,8 @@ test("One euro should be 1.07 dollars", function() {
 
     // Hago mi comparación (la prueba)
     expect(fromEuroToDollar(3.5)).toBe(3.745); // 1 euro son 1.07 dólares, entonces 3.5 euros deberían ser = (3.5 * 1.07)
+    expect(fromEuroToDollar("String")).toBe("no es un Nº valido");
+    expect(fromEuroToDollar(-10)).toBe("no es un Nº valido");
 })
 
 //testa para la funcion dolar a yen
@@ -22,6 +24,8 @@ test ("dollarAYen", () =>{
     const expectativa = 146.26168224299064 * 5;
     // Hago mi comparación (la prueba)
     expect(dollarAYen(5)).toBe(731.3084112149533); // 1 dolar son 146.26 yenes, entonces 5 dolares deberían ser = (146.26168224299064 * 5)
+    expect(dollarAYen("String")).toBe("no es un Nº valido");
+    expect(dollarAYen(-10)).toBe("no es un Nº valido");
 }); 
 
 //testa para la funcion dolar a yen
@@ -33,4 +37,6 @@ test ("yenAPund ", () =>{
     const expectativa = 0.05559105431309905 * 1000;
     // Hago mi comparación (la prueba)
     expect(yenAPund (1000)).toBe(5.559105431309904); // si 1 yen, son 0.05559105431309905 entonces 1000 yenes deberian ser = (0.05559105431309905 * 1000)
+    expect(yenAPund("String")).toBe("no es un Nº valido");
+    expect(yenAPund(-10)).toBe("no es un Nº valido");
 });
